@@ -48,7 +48,7 @@ def gotoBankorBreakfast():
         print("You have selected:", money)
         t.pendown()
         time.sleep(3)
-    elif location == 'breakfast':
+    else:
         t.penup()
         t.goto(-150, 100) # Set the turtle position
         t.pendown()
@@ -74,14 +74,7 @@ def gotoBankorBreakfast():
         t.forward(2)
         t.penup()
         time.sleep(7)
-    else:
-        t.penup()
-        t.forward(10)
-        t.pencolor('red')
-        t.pendown()
-        t.write('I can only go to bank or breakfast!', align="right", font=("Verdana", 16, "bold"))
-        t.goto(0,0)
-        
+  
 #Choose what money to get at the bank
 def choose_money():
     choice = input("How do you want your money? Enter 'A' for 2-$20, 'B' for 4-$10, or 'C' for 8-$5: ")
