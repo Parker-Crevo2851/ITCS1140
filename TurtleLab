@@ -69,7 +69,8 @@ def gotoBankorBreakfast():
         t.forward(10)
         t.pendown()
         t.write('I am at Breakfast, yum yum time!', align="right", font=("Verdana", 12, "bold"))
-        t.stamp()
+        breakfast = get_breakfast_choice()
+        buy_something_else()
         t.forward(2)
         t.penup()
         time.sleep(7)
@@ -94,6 +95,48 @@ def choose_money():
         else:
             print("Invalid choice. Please try again.")
         return choose_money()
+        
+def get_breakfast_choice():
+    # Ask the user for breakfast options
+    breakfast = input(
+        "What would you like for breakfast? Bacon sandwich, sausage sandwich, or oatmeal? ")
+
+    # Use if, elif, and elif statement to decide how the user wants their breakfast
+    if breakfast.lower() == "bacon sandwich":
+        print("You have ordered a bacon sandwich.")
+    elif breakfast.lower() == "sausage sandwich":
+        print("You have ordered a sausage sandwich.")
+    elif breakfast.lower() == "oatmeal":
+        print("You have ordered oatmeal.")
+    else:
+        print("Sorry, that's not a valid breakfast option.")
+
+    return breakfast
+    
+def buy_something_else():
+    while True:
+        response = input("Do you want to buy something else? (yes or no): ")
+        if response.lower() == "yes":
+            item = input("What would you like to buy? ")
+            print("You have ordered a", item)
+        elif response.lower() == "no":
+            print("Thank you for your order!")
+            break
+        else:
+            print("Sorry, that's not a valid response. Please enter yes or no.")
+
+
+def buy_something_else():
+    while True:
+        response = input("Do you want to buy something else? (yes or no): ")
+        if response.lower() == "yes":
+            item = input("What would you like to buy? ")
+            print("You have ordered a", item)
+        elif response.lower() == "no":
+            print("Thank you for your order!")
+            break
+        else:
+            print("Sorry, that's not a valid response. Please enter yes or no.") 
 
 def gotoDoctor():
         t.penup()
